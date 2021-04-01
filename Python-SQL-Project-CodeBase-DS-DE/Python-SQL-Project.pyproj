@@ -1,0 +1,69 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>f670b92d-22f8-4553-97d3-0503b9f38bbe</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
+    <StartupFile>Python_SQL_Project.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>Python-SQL-Project</Name>
+    <RootNamespace>A19-SoftwareEng-SQL-Project-Sample-Solution</RootNamespace>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <CommandLineArguments>--DBServer SURFACE-ANTOINE -d Survey_Sample_A19 -u sa -p 123456 -f C:/Users/yijun/OneDrive/Documents/survey.csv -r C:/Users/yijun/OneDrive/Documents/view.csv -v vw_AllSurveyData</CommandLineArguments>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
+    <InterpreterArguments>
+    </InterpreterArguments>
+    <InterpreterId>Global|PythonCore|3.8</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Python_SQL_Project.py" />
+    <Compile Include="myTools\ModuleInstaller.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="myTools\MSSQL_DBConnector.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="myTools\ContentObfuscation.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="myTools\setup.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="myTools\DBConnector.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="myTools\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="myTools\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="myTools\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.8" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
